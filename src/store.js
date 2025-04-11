@@ -1,18 +1,17 @@
 import { init } from '@rematch/core';
-import * as models from './models'; // Import all your models
+import models from './models';
 import loadingPlugin from '@rematch/loading';
 import feathersClient from './feathers';
 
 const loading = loadingPlugin();
+
+console.log('Models:', models);
 
 const store = init({
   models,
   plugins: [loading],
 });
 
-feathersClient.then(app => {
-  store.dispatch({ type: 'INIT_FEATHERS', payload: app });
-});
-
+store.dispatch({ type: 'INIT_FEATHERS', payload: feathersClient });
 
 export default store;

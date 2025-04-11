@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@feathersjs/client": "^5.0.33",
     "@rematch/core": "^2.2.0",
     "@rematch/loading": "^2.1.2",
     "@testing-library/dom": "^10.4.0",
